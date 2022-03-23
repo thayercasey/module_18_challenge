@@ -23,6 +23,7 @@
 
 ################################################################################
 # Imports
+from blinker import receiver_connected
 import streamlit as st
 from dataclasses import dataclass
 from typing import Any, List
@@ -175,15 +176,15 @@ pychain = setup()
 
 # @TODO:
 # Add an input area where you can get a value for `sender` from the user.
-input_data = st.text_input("Sender") 
+Sender = st.text_input("Sender") 
 
 # @TODO:
 # Add an input area where you can get a value for `receiver` from the user.
-input_data = st.text_input("Receiver")
+receiver = st.text_input("Receiver")
 
 # @TODO:
 # Add an input area where you can get a value for `amount` from the user.
-input_data = st.text_input("Amount")
+amount = st.text_input("Amount")
 
 if st.button("Add Block"):
     prev_block = pychain.chain[-1]
